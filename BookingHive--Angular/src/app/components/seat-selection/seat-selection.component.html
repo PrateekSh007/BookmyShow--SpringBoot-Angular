@@ -1,0 +1,27 @@
+
+
+<app-navbar></app-navbar>
+<div class="seat-theatre">
+  <div class="screen">Screen</div>
+  <div class="seat-container">
+    <div class="row" *ngFor="let row of seats; let i = index">
+      <button
+        class="seat"
+        *ngFor="let seat of row"
+        [ngClass]="{
+          selected: seat.seatNo === selectedSeat,
+          occupied: seat.occupied,
+          blocked: seat.blocked
+        }"
+        (click)="selectSeat(seat)"
+        [disabled]="isDialogOpen || seat.occupied || seat.blocked"
+      >
+        {{ seat.seatNo }}
+      </button>
+    </div>
+  </div>
+  <div class="bookbutton-container">
+    <button (click)="bookSeat()" [disabled]="!selectedSeat || isDialogOpen" class="bookbutton" [ngClass]="selectedSeat ? 'bookbutton-bg' : ''">Book Seat</button>
+  </div>
+</div>
+<app-footer></app-footer>

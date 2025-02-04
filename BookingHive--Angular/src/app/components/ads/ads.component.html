@@ -1,0 +1,13 @@
+<div class="ad-container">
+    <div class="ad-content">
+      <div *ngFor="let ad of ads; let i = index" class="ad-item" [class.active]="i === currentIndex">
+        <img [src]="ad" alt="Cinema Hall Ad" class="ad-image" *ngIf="i === currentIndex">
+      </div>
+    </div>
+    <div class="dots">
+      <span *ngFor="let dot of ads; let i = index" 
+            [class.active]="i === currentIndex" 
+            (click)="goToAd(i)">
+      </span>
+    </div>
+  </div>

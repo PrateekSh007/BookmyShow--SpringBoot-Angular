@@ -1,0 +1,66 @@
+
+<nav class="navbar">
+    <div class="logo" onclick="window.history.back()" >
+      
+      <img src="https://i.ibb.co/gMGw10QY/DALL-E-2025-02-04-10-27-28-A-modern-and-sleek-logo-for-Booking-Hive-with-a-color-scheme-that-complem.webp" alt="Booking Hive"  width="60px"/>
+      Booking Hive</div>
+    <!-- <input type="text" placeholder="Search for Movies, Events, Plays, Sports, Activities" class="search-bar"> -->
+  
+
+  
+  
+  
+  
+  
+  
+  
+  </nav>
+  <div class="analytics-container">
+    <h2>Admin Analytics</h2>
+   
+    <form (ngSubmit)="onSubmit()" class="analytics-form">
+        <div class="form-group">
+            <label for="cityId">City ID:</label>
+            <input id="cityId" type="number" [(ngModel)]="cityId" name="cityId" required placeholder="Enter City ID" />
+        </div>
+   
+        <div class="form-group">
+            <label for="movieName">Movie Name:</label>
+            <input id="movieName" type="text" [(ngModel)]="movieName" name="movieName" required placeholder="Enter Movie Name" />
+        </div>
+   
+        <button type="submit" class="submit-button">Fetch Analytics</button>
+    </form>
+   
+    
+    <div *ngIf="analyticsData && !isLoading" class="analytics-data">
+        <h3>Analytics for {{ analyticsData.movieName }}</h3>
+        <p><strong>Gross Collection:</strong> ₹{{ analyticsData.grossCollection }}</p>
+        <p><strong>Seats Booked:</strong> {{ analyticsData.seatsBooked }}</p>
+    </div>
+   
+    
+    <div *ngIf="isLoading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading analytics data...</p>
+    </div>
+   
+    <div *ngIf="!analyticsData && !isLoading" class="no-data">
+        <p>No analytics data available. Please enter a valid City ID and Movie Name.</p>
+    </div>
+   
+
+    <div class="chart-container">
+        <h2>Gross Sales by Movie</h2>
+        <ngx-charts-pie-chart class="chart"
+            [view]="view"
+            [results]="pieChartData"
+            [legend]="true"
+            [labels]="true"
+            [doughnut]="false"
+            [explodeSlices]="false"
+            [gradient]="true">
+        </ngx-charts-pie-chart>
+    </div>
+  </div>
+   

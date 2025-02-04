@@ -1,0 +1,43 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item:hover img {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item:hover h3 {
+  color: #ff4500;
+}

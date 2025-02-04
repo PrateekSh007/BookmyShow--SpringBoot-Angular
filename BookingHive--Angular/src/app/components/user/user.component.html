@@ -1,0 +1,11 @@
+<div class="seat-layout">
+    <div 
+      *ngFor="let seat of seats; let i = index" 
+      [class.selected]="selectedSeat === seat.id"
+      class="seat" 
+      (click)="selectSeat(seat.id)">
+      {{ seat.id }}
+    </div>
+  </div>
+  <button class="book-button" (click)="bookSeat()">Book Ticket</button>
+  

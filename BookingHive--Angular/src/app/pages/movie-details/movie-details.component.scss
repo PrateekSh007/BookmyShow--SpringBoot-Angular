@@ -1,0 +1,142 @@
+.movie-details-container {
+  margin-top: 100px;
+  // margin-left: 20px;
+  // margin-right: 20px;
+  // border-radius: 15px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: 40px;
+  background-color: #181818;
+  color: white;
+}
+
+.movie-content {
+  // padding: 30px;
+  display: flex;
+  gap: 20px;
+  height: 50vh;
+  max-width: 1000px;
+  width: 100%;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  // align-items: ;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+  position: relative;
+}
+
+.movie-image {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.play-trailer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movie-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 10px;
+}
+
+.rating {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.star {
+  color: gold;
+}
+
+.tags .format {
+  background: #444;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.book-btn {
+  background-color: #f62323;
+  color: white;
+  border: none;
+  width: 300px;
+  height: 70px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #c51c1c;
+}
+
+
+.about-movie-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-movie-container h2 {
+  margin-bottom: 10px;
+}
+
+
+.cast {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cast h2 {
+  margin-bottom: 10px;
+}
+
+.cast-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cast-member {
+  text-align: center;
+}
+
+.cast-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cast-name {
+  margin-top: 10px;
+  font-size: 16px;
+}

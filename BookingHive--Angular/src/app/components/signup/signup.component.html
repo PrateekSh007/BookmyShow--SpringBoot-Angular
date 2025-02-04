@@ -1,0 +1,43 @@
+<div class="signup-container">
+    <div class="signup-box">
+      <h2>Sign Up</h2>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" type="text" placeholder="Enter your name" />
+        <div class="error-message" *ngIf="f['name'].invalid && f['name'].touched">
+          Name is required (min 3 chars).
+        </div>
+  
+        <label for="age">Age</label>
+        <input id="age" formControlName="age" type="number" placeholder="Enter your age" />
+        <div class="error-message" *ngIf="f['age'].invalid && f['age'].touched">
+          Age must be between 18 and 100.
+        </div>
+  
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+        <div class="error-message" *ngIf="f['email'].invalid && f['email'].touched">
+          Enter a valid email.
+        </div>
+  
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" placeholder="Enter password" />
+        <div class="error-message" *ngIf="f['password'].invalid && f['password'].touched">
+          Password must be at least 6 characters.
+        </div>
+  
+        <label for="number">Mobile No.</label>
+        <input id="number" formControlName="number" type="text" placeholder="Enter mobile number" />
+        <div class="error-message" *ngIf="f['number'].invalid && f['number'].touched">
+          Enter a valid 10-digit number.
+        </div>
+  
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+  
+        <div class="login-link">
+          Already have an account? <a routerLink="/signin">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  

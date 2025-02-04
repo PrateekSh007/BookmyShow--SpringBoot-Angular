@@ -1,0 +1,89 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95%;
+  z-index: 1000;
+  background: linear-gradient(to right, #ff0000, #ffffff);
+  padding: 12px 40px; /* Reduced padding for a more balanced look */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+
+.city-dropdown {
+  width: 180px;
+  height: 35px;
+  background: white;
+  border: 2px solid #ff0000;
+  border-radius: 8px;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 20px;
+}
+
+.city-dropdown:hover {
+  background: #ffe6e6;
+  border-color: #cc0000;
+}
+
+.city-dropdown:focus {
+  outline: none;
+  border-color: #cc0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.auth-button, .admin-button, .analytics-button {
+  padding: 10px 15px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+  width: 150px;
+}
+
+.auth-button:hover,
+.admin-button:hover,
+.analytics-button:hover {
+  background-color: #cc0000;
+}
+
+.admin-button {
+  background-color: #28a745;
+}
+
+.admin-button:hover {
+  background-color: #218838;
+}
+
+.analytics-button {
+  background-color: #ff0000;
+}
+
+.analytics-button:hover {
+  background-color: #cc0000;
+}

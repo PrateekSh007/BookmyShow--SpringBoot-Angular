@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="analytics-container" *ngIf="analytics; else loadingOrError">
+    <h1>User </h1>
+    <div class="user-info">
+      <p><strong>Name:</strong> {{ analytics.name }}</p>
+      <p><strong>Email:</strong> {{ analytics.email }}</p>
+      <p><strong>Phone Number:</strong> {{ analytics.number }}</p>
+    </div>
+    <div class="booking-history">
+      <h2>Booking History</h2>
+      <div *ngIf="analytics.bookings && analytics.bookings.length > 0; else noBookings">
+        <ul>
+          <li *ngFor="let booking of analytics.bookings">
+            <!-- <p><strong>Booking ID:</strong> {{ booking.id }}</p> -->
+            <!-- <p><strong>Status:</strong> {{ booking.status }}</p> -->
+            <p><strong>Movie Name:</strong> {{booking.movieName}}</p>
+            <p><strong>Theatre Name:</strong>{{booking.theatreName}}</p>
+            <p><strong>Seat Number:</strong>{{booking.seatNo}}</p>
+            <p><strong>Booked On:</strong> {{ booking.timestamp | date:'short' }}</p>
+            <!-- Add any additional booking details here -->
+          </li>
+        </ul>
+      </div>
+      <ng-template #noBookings>
+        <p>No bookings found.</p>
+      </ng-template>
+    </div>
+  </div>
+  
+  <ng-template #loadingOrError>
+    <div *ngIf="error; else loading">
+      <p>{{ error }}</p>
+    </div>
+    <ng-template #loading>
+      <p>Loading analytics...</p>
+    </ng-template>
+  </ng-template>
+  

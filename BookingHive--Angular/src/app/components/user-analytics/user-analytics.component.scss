@@ -1,0 +1,71 @@
+.analytics-container {
+    max-width: 800px;
+    margin: 100px auto;
+    // margin-top: 200px;
+    padding: 20px;
+  
+    border-radius: 10px;
+    
+  
+    h1 {
+      text-align: center;
+      color: #6c0505;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+  
+    .user-info {
+    
+      color: white;
+      border: 1px solid #9d0202;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+  
+      p {
+        margin: 5px 0;
+        font-size: 1.1rem;
+        color: #e54444;
+      }
+    }
+  
+    .booking-history {
+      background-color: #ffffff;
+      border: 1px solid #9d0202;
+      border-radius: 8px;
+      padding: 15px;
+  
+      h2 {
+        text-align: center;
+        color: #6c0505;
+        margin-bottom: 15px;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+  
+      li {
+        // background-color: #ffe6e6;
+        border: 1px solid #9d0202;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 15px;
+  
+        p {
+          margin: 3px 0;
+          font-size: 1rem;
+          color: #e54444;
+        }
+      }
+    }
+  
+    /* Loading or error styles */
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #c61010;
+    }
+  }
+  

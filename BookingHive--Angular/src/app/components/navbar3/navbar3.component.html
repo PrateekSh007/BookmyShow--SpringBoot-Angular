@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="logo" (click)="navigateToHome()">Booking Hive</div>
+
+
+  <div class ="buttons">
+
+    <!-- Admin Button (Visible only for Admin) -->
+    <button *ngIf="isAdmin" class="admin-button" (click)="navigateToAdmin()">Admin</button>
+
+    <!-- Auth Button -->
+    <button class="auth-button" (click)="toggleAuth()">{{ authText }}</button>
+
+  </div>
+
+
+  
+</nav>

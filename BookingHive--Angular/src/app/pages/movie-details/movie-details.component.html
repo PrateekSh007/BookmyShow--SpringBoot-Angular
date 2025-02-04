@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="movie-details-container">
+  <div class="movie-content">
+    <div class="movie-poster">
+      <img [src]="movieDetails.url" [alt]="movieDetails.movieName" class="movie-image">
+      <button class="play-trailer" (click)="playTrailer(movieDetails.trailer)" >▶ Trailers</button>
+    </div>
+    <div class="movie-info">
+      <h1>{{ movieDetails.movieName }}</h1>
+      <div class="rating">
+        <span class="star">&#9733;</span> {{ movieDetails.rating }} / 10
+      </div>
+      <div class="tags">
+        <span *ngFor="let format of movieDetails.formats" class="format">{{ format }}</span>
+      </div>
+      
+      <p class="genre">{{ movieDetails.genre }}</p>
+      
+      <button (click)="bookTickets()" class="book-btn">Book Tickets</button>
+    </div>
+  </div>
+</div>
+
+<div class="about-movie-container">
+  <h2>About the Movie</h2>
+  <p>{{ movieDetails.about }}</p>
+</div>
+
+<div class="cast">
+  <h2>Cast</h2>
+  <div class="cast-list">
+    <div *ngFor="let cast of casts" class="cast-member">
+      <img [src]="cast.url" [alt]="cast.name" class="cast-image">
+      <p class="cast-name">{{ cast.name }}</p>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

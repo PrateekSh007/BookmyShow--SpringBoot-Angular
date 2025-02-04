@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="theatre-container">
+  <h2 class="title">Select Your Theatre and Show</h2>
+
+  <div class="theatre-show-wrapper">
+    <div class="theatre-list">
+      <div *ngIf="theatreShows.length > 0; else noTheatres">
+        <div *ngFor="let theatreShow of theatreShows" class="theatre-card">
+          <div class="theatre-details">
+            <div class="movie-image">
+              <img [src]="movieDetails.url" alt="{{ movieDetails.url }}" />
+            </div>
+            <h3>{{ theatreShow.theatre.thName }}</h3>
+        
+              <p><strong>{{ movieDetails.movieName }} </strong> </p>
+       
+         
+          </div>
+          <div class="show-list">
+            <h4>Available Shows</h4>
+            <div *ngFor="let show of theatreShow.shows" class="show-card" (click)="selectShow(show.id, show.price)">
+              <p><strong>Start Time:</strong> {{ formatDate(show.startTime) }}</p>
+              <p><strong>Price:</strong> ₹{{ show.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noTheatres>
+        <p class="no-theatres">No theatres available for this selection.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

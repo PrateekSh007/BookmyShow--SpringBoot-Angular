@@ -1,0 +1,23 @@
+.navbar {
+    background: linear-gradient(to right, #ff0000, #ffffff);
+    // margin: 20px;
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+  
+    .logo {
+        font-size: 24px ;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline */
+        color: white; /* Ensure the text color matches the navbar */
+        // transition: opacity 0.3s ease;
+      }
+  
+    
+  }

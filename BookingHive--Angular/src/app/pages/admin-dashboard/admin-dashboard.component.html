@@ -1,0 +1,92 @@
+<!-- Navigation -->
+
+
+<nav class="navbar">
+  <div class="logo" onclick="window.history.back()" BV             >
+    
+    <img src="https://i.ibb.co/gMGw10QY/DALL-E-2025-02-04-10-27-28-A-modern-and-sleek-logo-for-Booking-Hive-with-a-color-scheme-that-complem.webp" alt="Booking Hive"  width="60px"/>
+    Booking Hive</div>
+  <!-- <input type="text" placeholder="Search for Movies, Events, Plays, Sports, Activities" class="search-bar"> -->
+
+
+  <button class="analytics-button" (click)="redirect()"> Analytics</button>
+
+
+
+
+
+
+
+</nav>
+
+<div class="admin-dashboard">
+  <h1>Admin Dashboard</h1>
+ 
+  <!-- Add City Form -->
+  <div>
+    <h2>Add City</h2>
+    <form (ngSubmit)="addCity(cityData)">
+      <input class="required" type="text" [(ngModel)]="cityData.cityName" name="cityName" placeholder="City Name" required />
+      <button type="submit">Add City</button>
+    </form>
+  </div>
+ 
+  <!-- Add Theatre Form -->
+  <div>
+    <h2>Add Theatre</h2>
+    <form (ngSubmit)="addTheatre(theatreData)">
+      <input class="required" type="text" [(ngModel)]="theatreData.thName" name="thName" placeholder="Theatre Name" required />
+      
+      <!-- Cities Dropdown -->
+      <select [(ngModel)]="theatreData.cityId" name="cityId" required>
+        <option value="0" disabled>Select a city</option>
+        <option *ngFor="let city of cities" [value]="city.id">{{ city.cityName }}</option>
+      </select>
+      <button type="submit">Add Theatre</button>
+    </form>
+  </div>
+ 
+  <!-- Add Movie Form -->
+  <div>
+    <h2>Add Movie</h2>
+    <form (ngSubmit)="addMovie(movieData)">
+      <input class="required" type="text" [(ngModel)]="movieData.movieName" name="movieName" placeholder="Movie Name" required />
+      <input class="required" type="text" [(ngModel)]="movieData.genre" name="genre" placeholder="Genre" required />
+      <input class="required" type="number" [(ngModel)]="movieData.rating" name="rating" placeholder="Rating" required />
+      <input class="required" type="text" [(ngModel)]="movieData.url" name="url" placeholder="Movie URL" required />
+      <input class="required" type="text" [(ngModel)]="movieData.about" name="url" placeholder="About" required />
+      <input class="required" type="text" [(ngModel)]="movieData.trailer" name="url" placeholder="Trailer URL" required />
+      <button type="submit">Add Movie</button>
+    </form>
+  </div>
+ 
+  <!-- Add Show Form -->
+  <div>
+    <h2>Add Show</h2>
+    <form (ngSubmit)="addShow(showData)">
+      <input class="required" type="number" [(ngModel)]="showData.price" name="price" placeholder="Price" required />
+      <input class="required" type="datetime-local" [(ngModel)]="showData.startTime" name="startTime" placeholder="Start Time" required />
+      <input class="required" type="number" [(ngModel)]="showData.theatreId" name="theatreId" placeholder="Theatre ID" required />
+      <input class="required" type="number" [(ngModel)]="showData.movieId" name="movieId" placeholder="Movie ID" required />
+      <button type="submit">Add Show</button>
+    </form>
+  </div>
+ 
+  <!-- Add Casts Form -->
+  <div>
+    <h2>Add Casts</h2>
+    <form (ngSubmit)="addCasts(castsData)">
+      <input class="required" type="text" [(ngModel)]="castsData.movieName" name="movieName" placeholder="Movie Name" required />
+ 
+      <div *ngFor="let cast of castsData.casts; let i = index">
+        <input class="required" type="text" [(ngModel)]="cast.name" name="castName{{i}}" placeholder="Cast Name" required />
+        <input class="required" type="text" [(ngModel)]="cast.url" name="castUrl{{i}}" placeholder="Cast URL" required />
+        <button type="button" (click)="removeCast(i)">Remove Cast</button>
+      </div>
+ 
+      <button type="button" (click)="addNewCast()">Add Another Cast</button>
+      <button type="submit">Add Casts</button>
+    </form>
+  </div>
+</div>
+ 

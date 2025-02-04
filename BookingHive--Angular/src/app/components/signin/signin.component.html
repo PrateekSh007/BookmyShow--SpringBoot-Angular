@@ -1,0 +1,25 @@
+<div class="signin-container">
+    <div class="signin-box">
+      <h2>Sign In</h2>
+      <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+        <div class="error-message" *ngIf="f['email'].invalid && f['email'].touched">
+          Enter a valid email.
+        </div>
+  
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" placeholder="Enter password" />
+        <div class="error-message" *ngIf="f['password'].invalid && f['password'].touched">
+          Password must be at least 6 characters.
+        </div>
+  
+        <button type="submit" [disabled]="signinForm.invalid">Sign In</button>
+  
+        <div class="signup-link">
+          Don't have an account? <a routerLink="/signup">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  

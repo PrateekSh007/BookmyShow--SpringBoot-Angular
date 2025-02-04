@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<app-ads></app-ads>
+<div class="home-container">
+  <div class="home">
+    <h2>Now Showing in {{ city | titlecase }}</h2>
+
+    <!-- Movie Carousel -->
+    <app-movie-carousel
+      *ngIf="movies && movies.length > 0"
+      [movies]="movies"
+      (movieSelected)="navigateToMovieDetails($event)"
+    ></app-movie-carousel>
+
+    <!-- Fallback Message -->
+    <p *ngIf="!movies || movies.length === 0">No movies available for the selected city.</p>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+.seat-layout {
+    display: grid;
+    grid-template-columns: repeat(10, 50px); /* 10 seats per row */
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .seat:hover {
+    background-color: #bbb;
+  }
+  
+  .seat.selected {
+    background-color: #4caf50; /* Selected seat color */
+    color: white;
+  }
+  
+  .book-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f62323;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .book-button:hover {
+    background-color: #f66363;
+  }
+  

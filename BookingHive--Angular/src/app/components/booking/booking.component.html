@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="booking-container">
+  <h1>🎟️ Your Booking is Confirmed! 🎟️</h1>
+
+  <div *ngIf="bookingData">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <h2>🎬 Movie Ticket</h2>
+      </div>
+   
+      <div class="ticket-body">
+        <div class="ticket-section">
+          <p><strong>🎥 Movie:</strong> {{ bookingData.movieName }}</p>
+          <p><strong>🏢 Theatre:</strong> {{ bookingData.theatreName }}</p>
+        </div>
+        <div class="ticket-section">
+          <p><strong>👤 User ID:</strong> {{ bookingData.userId }}</p>
+          <p><strong>💺 Seat Number:</strong> {{ bookingData.seatNo }}</p>
+        </div>
+        <div class="ticket-section status-section">
+          <p class="status"><strong>✅ Status:</strong> Confirmed</p>
+        </div>
+      </div>
+
+      <div class="ticket-footer">
+        <p>📅 Booked on: {{ bookingData.timestamp || 'N/A' }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="no-booking" *ngIf="!bookingData">❌ No booking details found.</p>
+  
+  <div class="button-container">
+    <button (click)="redirectToHome()" class="home-button">Go to Home</button>
+    <button (click)="downloadTicket()" class="home-button">Download Ticket</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

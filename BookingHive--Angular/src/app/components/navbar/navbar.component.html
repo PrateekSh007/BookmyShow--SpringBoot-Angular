@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="logo" (click)="navigateToHome()">
+    
+    <img src="https://i.ibb.co/gMGw10QY/DALL-E-2025-02-04-10-27-28-A-modern-and-sleek-logo-for-Booking-Hive-with-a-color-scheme-that-complem.webp" alt="Booking Hive"  width="60px"/>
+    Booking Hive</div>
+  <!-- <input type="text" placeholder="Search for Movies, Events, Plays, Sports, Activities" class="search-bar"> -->
+
+
+  <select class="city-dropdown" [(ngModel)]="selectedCity" (change)="onCityChange() ">
+    <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
+  </select>
+
+
+  <button *ngIf="isLoggedIn" class="analytics-button" (click)="navigateToAnalytics()">My Profile</button>
+
+
+  <button *ngIf="isAdmin" class="admin-button" (click)="navigateToAdmin()">Admin</button>
+
+
+  <button class="auth-button" (click)="toggleAuth()">{{ authText }}</button>
+</nav>

@@ -1,0 +1,40 @@
+<!-- <div class="city-selector">
+  <label for="city">Select City:</label>
+  <select id="city" [(ngModel)]="selectedCityName" (change)="onCityChange()">
+    <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
+  </select>
+</div> -->
+
+
+
+
+<nav class="navbar">
+  <div class="logo" routerLink="home">Booking Hive</div>
+</nav>
+<!-- Updated HTML Template -->
+<div class="parent-container">
+  <div class="city-selector-container">
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search for your city"
+        [(ngModel)]="searchQuery"
+        (input)="filterCities()"
+      />
+    </div>
+
+    <div class="popular-cities">
+      <h3>Popular Cities</h3>
+      <div class="cities-grid">
+        <div
+          *ngFor="let city of filteredCities"
+          class="city-card"
+          (click)="selectCity(city)"
+        >
+          <!-- <img [src]="city.icon" alt="{{ city.cityName }}" /> -->
+          <p>{{ city.cityName }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="carousel">
+  <div *ngFor="let movie of movies" class="carousel-item" (click)="movieSelected.emit(movie.id)">
+    <img [src]="movie.image" [alt]="movie.title">
+    <h3>{{ movie.title }}</h3>
+  </div>
+</div>

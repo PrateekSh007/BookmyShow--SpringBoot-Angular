@@ -1,0 +1,30 @@
+<!-- 
+<div class="payment-dialog">
+    <h2>Payment</h2>
+<p>Confirm payment for your selected seat?</p>
+<button (click)="confirmPayment()">Confirm</button>
+<button (click)="cancel()">Cancel</button>
+
+</div> -->
+
+
+<!-- Ensure this container wraps your dialog content -->
+<div class="payment-dialog-container">
+    <div class="payment-dialog">
+      <h2>Payment</h2>
+      <p>Confirm payment for your selected seat?</p>
+     
+      <div class="payment-details">
+        <!-- Add more payment details if necessary -->
+        <div class="amount">
+          <p>Total Amount:</p>
+          <p>{{ totalAmount||tempAmount }}</p>
+        </div>
+        
+      </div>
+      <div class="actions">
+        <button class="confirm" (click)="confirmPayment()">Confirm</button>
+        <button class="cancel" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
